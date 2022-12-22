@@ -8,7 +8,7 @@ import io
 import nltk
 nltk.download('punkt')
 
-st.set_page_config(page_title='InNews🇮🇳: A Summarised News📰 Portal', page_icon='./Meta/newspaper.ico')
+st.set_page_config(page_title='InNews🇮🇳: A Summarised News📰 App', page_icon='./Meta/newspaper.ico')
 
 def fetch_news_search_topic(topic):
     site = 'https://news.google.com/rss/search?q={}'.format(topic)
@@ -114,20 +114,20 @@ def run():
             else:
                 st.error("No News found for {}".format(chosen_topic))
 
-    # elif cat_op == category[3]:
-    #     user_topic = st.text_input("Enter your Topic🔍")
-    #     no_of_news = st.slider('Number of News:', min_value=5, max_value=15, step=1)
+    elif cat_op == category[3]:
+        user_topic = st.text_input("Enter your Topic🔍")
+        no_of_news = st.slider('Number of News:', min_value=5, max_value=15, step=1)
 
-    #     if st.button("Search") and user_topic != '':
-    #         user_topic_pr = user_topic.replace(' ', '')
-    #         news_list = fetch_news_search_topic(topic=user_topic_pr)
-    #         if news_list:
-    #             st.subheader("✅ Here are the some {} News for you".format(user_topic.capitalize()))
-    #             display_news(news_list, no_of_news)
-    #         else:
-    #             st.error("No News found for {}".format(user_topic))
-    #     else:
-    #         st.warning("Please write Topic Name to Search🔍")
+        if st.button("Search") and user_topic != '':
+            user_topic_pr = user_topic.replace(' ', '')
+            news_list = fetch_news_search_topic(topic=user_topic_pr)
+            if news_list:
+                st.subheader("✅ Here are the some {} News for you".format(user_topic.capitalize()))
+                display_news(news_list, no_of_news)
+            else:
+                st.error("No News found for {}".format(user_topic))
+        else:
+            st.warning("Please write Topic Name to Search🔍")
 
 
 run()
