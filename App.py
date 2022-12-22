@@ -89,7 +89,7 @@ def run():
 
     with col3:
         st.write("")
-    category = ['--Select--', 'Trending🔥 News', 'Favourite💙 Topics']
+    category = ['--Select--', 'Trending🔥 News', 'Favourite💙 Topics', 'Search🔍 Topic']
     cat_op = st.selectbox('Select your Category', category)
     if cat_op == category[0]:
         st.warning('Please select Type!!')
