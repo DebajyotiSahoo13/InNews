@@ -6,6 +6,7 @@ from urllib.request import urlopen
 from newspaper import Article
 import io
 import nltk
+from lxml_html_clean import Cleaner
 nltk.download('punkt')
 
 st.set_page_config(page_title='InNews🇮🇳: A Summarised News📰 App', page_icon='./Meta/newspaper.ico')
